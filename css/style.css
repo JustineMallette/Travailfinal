@@ -1,0 +1,171 @@
+:root {
+    --gap: 5px;
+    --trans-speed: 0.5s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+    margin: auto;
+
+}
+
+.page>* {
+    padding: var(--gap);
+    margin: var(--gap);
+}
+
+.header,
+.footer {
+    display: inline;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.headerMenu {
+    display: grid;
+    grid-template-columns: 4vw auto;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu .menuItem {
+    display: inline;
+    font-size: 3vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    padding: 3px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 15px;
+}
+
+.menu .menuItem:hover {
+    color: white;
+    background-color: rgb(9, 8, 8);
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+}
+
+.menu .active {
+    color: rgb(178, 23, 124) !important;
+}
+
+
+.siteIcon {
+    background-image: url('../images/terre.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+
+@media (min-width: 1100px) {
+    .menu .menuItem {
+        font-size: 33px;
+    }
+
+    .headerMenu {
+        display: grid;
+        grid-template-columns: 45px auto;
+    }
+}
+
+
+.mosaique {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;  
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 850px;         
+    margin: 0 auto;            
+}
+
+/* Layout demandé */
+@media (max-width: 499px) {
+    .mosaique {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+    .mosaique {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 700px) and (max-width: 899px) {
+    .mosaique {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1099px) {
+    .mosaique {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .mosaique {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+
+.imageFrame {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+aspect-ratio: 1/1;
+cursor: pointer;
+border-radius: 6px;
+&:hover {
+scale: 1.05;
+transition: var(--trans-speed);
+}
+transition: var(--trans-speed);
+}
+
+
+
